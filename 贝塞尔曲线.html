@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 2px solid black;
+				/*animation: linear;*/
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas  = document.getElementsByTagName("canvas")[0];
+			var bes = canvas.getContext("2d");
+			var x1 = y = 100;
+			var x = y1 = 700;
+			function greenBall () {
+				bes.beginPath();
+				bes.arc(x,y,50,0,Math.PI*2,false);
+				bes.fillStyle = "green";
+				bes.fill();
+				bes.closePath();
+			}
+			function redBall () {
+				bes.beginPath();
+				bes.arc(x1,y1,50,0,Math.PI*2,false);
+				bes.fillStyle = "red";
+				bes.fill();
+				bes.closePath();
+			}
+			function beiSaier () {
+				bes.beginPath();
+				bes.moveTo(700,100);
+				bes.bezierCurveTo(x,y,x1,y1,100,700);
+				bes.stroke();
+				bes.closePath();
+			}
+			beiSaier();
+			greenBall();
+			redBall();
+			console.log(canvas,bes);
+			function kongZhiDian (e) {
+				
+			}
+			function qingkong () {
+				bes.clearRect(0,0,800,800);
+			}
+		</script>
+	</body>
+</html>

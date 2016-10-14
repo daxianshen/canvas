@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style media="screen">
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.getElementsByTagName("canvas");
+			var ctx = canvas[0].getContext("2d");
+			
+			ctx.beginPath();
+			ctx.moveTo(50,50);
+			ctx.lineTo(300,300);
+			ctx.lineTo(150,300);
+			ctx.lineTo(50,50);
+			ctx.strokeStyle = "aqua";
+//			ctx.lineWidth = "20";
+			ctx.lineJoin = "round";//butt  默认 round 圆形  spuare  矩形
+			ctx.fillStyle = "blue";
+			ctx.fill();
+			ctx.stroke();
+			ctx.closePath();
+			
+			
+			
+			ctx.beginPath();
+			ctx.fillStyle = "aqua";
+			ctx.fillRect(200,10,100,100)
+			ctx.clearRect(210,20,80,80);
+			ctx.closePath();
+			ctx.clearRect(0,0,500,500);
+			ctx.beginPath();
+			ctx.fillStyle = "aqua";
+			ctx.arc(100,100,50,0,Math.PI,false);
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.fillStyle = "aqua";
+			ctx.arc(100,100,50,Math.PI/2,Math.PI*1.5,false);
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.moveTo(425,225);
+			ctx.quadraticCurveTo(375,225,375,262);
+			ctx.quadraticCurveTo(375,300,400,300);
+			ctx.quadraticCurveTo(400,320,380,325);
+			ctx.quadraticCurveTo(410,320,415,300);
+			ctx.quadraticCurveTo(475,300,475,262);
+			ctx.quadraticCurveTo(475,225,425,225);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(150,150)
+			ctx.bezierCurveTo(150,250,330,130,330,230);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(150,150)
+			ctx.bezierCurveTo(150,250,330,130,330,230);
+			ctx.stroke();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

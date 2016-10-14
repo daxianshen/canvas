@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 2px solid black;
+				/*animation: linear;*/
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas  = document.getElementsByTagName("canvas")[0];
+			var ctx = canvas.getContext("2d");
+			ctx.moveTo(20,480);
+		</script>
+	</body>
+</html>
